@@ -1,28 +1,18 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Admin, Resource, EditGuesser, ListGuesser } from 'react-admin';
+import { ProductList, ProductEdit, ProductCreate } from './products';
+import { OrderList, OrderEdit} from './orders';
+import { ImageList,ImageCreate } from './image';
+import authProvider from './authProvider';
+import dataProvider from './dataProvider';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+// const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
+const App = () => (
+  <Admin dataProvider={dataProvider} authProvider={authProvider}>
+    <Resource name="product" list={ProductList} edit={ProductEdit} create={ProductCreate} />
+    <Resource name="order" list={OrderList} />
+    <Resource name="image" list={ImageList} create={ImageCreate}/>
+  </Admin>
+);
 
 export default App;
