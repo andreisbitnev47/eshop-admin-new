@@ -23,7 +23,7 @@ const resourseMap = {
 const client = require('graphql-client')({
     url: BACKEND_GRAPHQL,
     headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('token'),
+        Authorization: localStorage.getItem('token'),
     }
 });
 
@@ -46,7 +46,7 @@ const upload = (file) => {
             method: 'POST',
             body: formData,
             headers: {
-                "Authorization": 'Bearer ' + localStorage.getItem('token'),
+                Authorization: localStorage.getItem('token'),
             },
         };
         

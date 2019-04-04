@@ -19,7 +19,7 @@ import { BACKEND_URL, BACKEND_GRAPHQL } from '../env';
 const client = require('graphql-client')({
     url: BACKEND_GRAPHQL,
     headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('token'),
+        Authorization: localStorage.getItem('token'),
     }
 });
 
