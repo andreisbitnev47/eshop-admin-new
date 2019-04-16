@@ -16,7 +16,6 @@ export default {
                     handle
                     amount
                     available
-                    imgSmall
                     imgBig
                     price
                 }
@@ -42,7 +41,6 @@ export default {
                     handle
                     amount
                     available
-                    imgSmall
                     imgBig
                     price
                 }
@@ -53,8 +51,8 @@ export default {
     }),
     UPDATE: (params) => ({
         query: `
-            mutation editProduct($id: ID!, $title: productTitleEditInput, $descriptionShort: productDescriptionShortEditInput, $descriptionLong: productDescriptionLongEditInput, $weight: Int, $amount: Int, $available: Boolean, $imgSmall: [String], $imgBig: [String], $price: Float){
-                editProduct(id: $id, title: $title, descriptionShort: $descriptionShort, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgSmall: $imgSmall, imgBig: $imgBig, price: $price) {
+            mutation editProduct($id: ID!, $title: productTitleEditInput, $descriptionShort: productDescriptionShortEditInput, $descriptionLong: productDescriptionLongEditInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float, $handle: String){
+                editProduct(id: $id, title: $title, descriptionShort: $descriptionShort, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price, handle: $handle) {
                     product {
                         id
                         titleEn: title(language: "en")
@@ -69,7 +67,6 @@ export default {
                         handle
                         amount
                         available
-                        imgSmall
                         imgBig
                         price
                     }
@@ -83,15 +80,15 @@ export default {
             descriptionLong: { en: params.data.descriptionLongEn, est: params.data.descriptionLongEst, rus: params.data.descriptionLongRus },
             amount: params.data.amount,
             available: params.data.available,
-            imgSmall: params.data.imgSmall,
             imgBig: params.data.imgBig,
             price: params.data.price,
+            handle: params.data.handle,
         }
     }),
     CREATE: (params) => ({
         query: `
-            mutation addProduct($title: productTitleAddInput, $descriptionShort: productDescriptionShortAddInput, $descriptionLong: productDescriptionLongAddInput, $weight: Int, $amount: Int, $available: Boolean, $imgSmall: [String], $imgBig: [String], $price: Float!){
-                addProduct(title: $title, descriptionShort: $descriptionShort, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgSmall: $imgSmall, imgBig: $imgBig, price: $price) {
+            mutation addProduct($title: productTitleAddInput, $descriptionShort: productDescriptionShortAddInput, $descriptionLong: productDescriptionLongAddInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float!){
+                addProduct(title: $title, descriptionShort: $descriptionShort, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price) {
                     product {
                         id
                         titleEn: title(language: "en")
@@ -106,7 +103,6 @@ export default {
                         handle
                         amount
                         available
-                        imgSmall
                         imgBig
                         price
                     }
@@ -119,7 +115,6 @@ export default {
             descriptionLong: { en: params.data.descriptionLongEn, est: params.data.descriptionLongEst, rus: params.data.descriptionLongRus },
             amount: params.data.amount,
             available: params.data.available,
-            imgSmall: params.data.imgSmall,
             imgBig: params.data.imgBig,
             price: params.data.price,
         }
@@ -142,7 +137,6 @@ export default {
                         handle
                         amount
                         available
-                        imgSmall
                         imgBig
                         price
                     }

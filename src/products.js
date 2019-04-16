@@ -38,6 +38,7 @@ export const ProductEdit = props => (
     <Edit {...props}>
         <SimpleForm>
             <DisabledInput source="id" />
+            <TextInput source="handle" />
             <TextInput source="titleEn" />
             <TextInput source="titleEst" />
             <TextInput source="titleRus" />
@@ -47,10 +48,8 @@ export const ProductEdit = props => (
             <LongTextInput source="descriptionLongEn" />
             <LongTextInput source="descriptionLongEst" />
             <LongTextInput source="descriptionLongRus" />
-            <DisabledInput source="handle" />
             <NumberInput source="amount" />
             <BooleanInput source="available"/>
-            <ImageSelect source="imgSmall"/>
             <ImageSelect source="imgBig"/>
             <NumberInput source="price" />
         </SimpleForm>
@@ -71,7 +70,6 @@ export const ProductCreate = props => (
             <LongTextInput source="descriptionLongRus" />
             <NumberInput source="amount" />
             <BooleanInput source="available"/>
-            <ImageSelect source="imgSmall"/>
             <ImageSelect source="imgBig"/>
             <NumberInput source="price" />
         </SimpleForm>
