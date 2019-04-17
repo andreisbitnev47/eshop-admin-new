@@ -7,9 +7,6 @@ export default {
                     titleEn: title(language: "en")
                     titleEst: title(language: "est")
                     titleRus: title(language: "rus")
-                    descriptionShortEn: descriptionShort(language: "en")
-                    descriptionShortEst: descriptionShort(language: "est")
-                    descriptionShortRus: descriptionShort(language: "rus")
                     descriptionLongEn: descriptionLong(language: "en")
                     descriptionLongEst: descriptionLong(language: "est")
                     descriptionLongRus: descriptionLong(language: "rus")
@@ -32,9 +29,6 @@ export default {
                     titleEn: title(language: "en")
                     titleEst: title(language: "est")
                     titleRus: title(language: "rus")
-                    descriptionShortEn: descriptionShort(language: "en")
-                    descriptionShortEst: descriptionShort(language: "est")
-                    descriptionShortRus: descriptionShort(language: "rus")
                     descriptionLongEn: descriptionLong(language: "en")
                     descriptionLongEst: descriptionLong(language: "est")
                     descriptionLongRus: descriptionLong(language: "rus")
@@ -51,16 +45,13 @@ export default {
     }),
     UPDATE: (params) => ({
         query: `
-            mutation editProduct($id: ID!, $title: productTitleEditInput, $descriptionShort: productDescriptionShortEditInput, $descriptionLong: productDescriptionLongEditInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float, $handle: String){
-                editProduct(id: $id, title: $title, descriptionShort: $descriptionShort, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price, handle: $handle) {
+            mutation editProduct($id: ID!, $title: productTitleEditInput, $descriptionLong: productDescriptionLongEditInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float, $handle: String){
+                editProduct(id: $id, title: $title, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price, handle: $handle) {
                     product {
                         id
                         titleEn: title(language: "en")
                         titleEst: title(language: "est")
                         titleRus: title(language: "rus")
-                        descriptionShortEn: descriptionShort(language: "en")
-                        descriptionShortEst: descriptionShort(language: "est")
-                        descriptionShortRus: descriptionShort(language: "rus")
                         descriptionLongEn: descriptionLong(language: "en")
                         descriptionLongEst: descriptionLong(language: "est")
                         descriptionLongRus: descriptionLong(language: "rus")
@@ -76,7 +67,6 @@ export default {
         variables: { 
             id: params.id,
             title: { en: params.data.titleEn, est: params.data.titleEst, rus: params.data.titleRus },
-            descriptionShort: { en: params.data.descriptionShortEn, est: params.data.descriptionShortEst, rus: params.data.descriptionShortRus },
             descriptionLong: { en: params.data.descriptionLongEn, est: params.data.descriptionLongEst, rus: params.data.descriptionLongRus },
             amount: params.data.amount,
             available: params.data.available,
@@ -87,16 +77,13 @@ export default {
     }),
     CREATE: (params) => ({
         query: `
-            mutation addProduct($title: productTitleAddInput, $descriptionShort: productDescriptionShortAddInput, $descriptionLong: productDescriptionLongAddInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float!){
-                addProduct(title: $title, descriptionShort: $descriptionShort, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price) {
+            mutation addProduct($title: productTitleAddInput, $descriptionLong: productDescriptionLongAddInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float!){
+                addProduct(title: $title, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price) {
                     product {
                         id
                         titleEn: title(language: "en")
                         titleEst: title(language: "est")
                         titleRus: title(language: "rus")
-                        descriptionShortEn: descriptionShort(language: "en")
-                        descriptionShortEst: descriptionShort(language: "est")
-                        descriptionShortRus: descriptionShort(language: "rus")
                         descriptionLongEn: descriptionLong(language: "en")
                         descriptionLongEst: descriptionLong(language: "est")
                         descriptionLongRus: descriptionLong(language: "rus")
@@ -111,7 +98,6 @@ export default {
         `,
         variables: { 
             title: { en: params.data.titleEn, est: params.data.titleEst, rus: params.data.titleRus },
-            descriptionShort: { en: params.data.descriptionShortEn, est: params.data.descriptionShortEst, rus: params.data.descriptionShortRus },
             descriptionLong: { en: params.data.descriptionLongEn, est: params.data.descriptionLongEst, rus: params.data.descriptionLongRus },
             amount: params.data.amount,
             available: params.data.available,
@@ -128,9 +114,6 @@ export default {
                         titleEn: title(language: "en")
                         titleEst: title(language: "est")
                         titleRus: title(language: "rus")
-                        descriptionShortEn: descriptionShort(language: "en")
-                        descriptionShortEst: descriptionShort(language: "est")
-                        descriptionShortRus: descriptionShort(language: "rus")
                         descriptionLongEn: descriptionLong(language: "en")
                         descriptionLongEst: descriptionLong(language: "est")
                         descriptionLongRus: descriptionLong(language: "rus")

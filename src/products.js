@@ -42,9 +42,6 @@ export const ProductEdit = props => (
             <TextInput source="titleEn" />
             <TextInput source="titleEst" />
             <TextInput source="titleRus" />
-            <LongTextInput source="descriptionShortEn" />
-            <LongTextInput source="descriptionShortEst" />
-            <LongTextInput source="descriptionShortRus" />
             <LongTextInput source="descriptionLongEn" />
             <LongTextInput source="descriptionLongEst" />
             <LongTextInput source="descriptionLongRus" />
@@ -62,9 +59,6 @@ export const ProductCreate = props => (
             <TextInput source="titleEn" />
             <TextInput source="titleEst" />
             <TextInput source="titleRus" />
-            <LongTextInput source="descriptionShortEn" />
-            <LongTextInput source="descriptionShortEst" />
-            <LongTextInput source="descriptionShortRus" />
             <LongTextInput source="descriptionLongEn" />
             <LongTextInput source="descriptionLongEst" />
             <LongTextInput source="descriptionLongRus" />
