@@ -19,8 +19,8 @@ import {
 } from 'react-admin';
 import ObjectField from './components/ObjectField';
 import OrderShipping from './components/OrderShipping';
-
-import ImageSelect from './components/ImageSelect';
+import OrderEmail from './components/OrderEmail';
+import OrderProducts from './components/OrderProducts';
 
 export const OrderList = props => (
     <List {...props}>
@@ -47,29 +47,11 @@ export const OrderEdit = props => (
                 { id: 'PAID', name: 'PAID' },
                 { id: 'SENT', name: 'SENT' },
             ]} />
-            <DisabledInput source="phone" />
+            <TextField source="phone" />
+            <OrderEmail source="user" />
             <OrderShipping source="shippingProvider" />
+            <OrderProducts source="products" />
         </SimpleForm>
     </Edit>
 );
 
-export const ProductCreate = props => (
-    <Create {...props}>
-        <SimpleForm>
-            <TextInput source="titleEn" />
-            <TextInput source="titleEst" />
-            <TextInput source="titleRus" />
-            <LongTextInput source="descriptionShortEn" />
-            <LongTextInput source="descriptionShortEst" />
-            <LongTextInput source="descriptionShortRus" />
-            <LongTextInput source="descriptionLongEn" />
-            <LongTextInput source="descriptionLongEst" />
-            <LongTextInput source="descriptionLongRus" />
-            <NumberInput source="amount" />
-            <BooleanInput source="available"/>
-            <ImageSelect source="imgSmall"/>
-            <ImageSelect source="imgBig"/>
-            <NumberInput source="price" />
-        </SimpleForm>
-    </Create>
-);

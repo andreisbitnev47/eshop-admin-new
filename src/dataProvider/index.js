@@ -13,6 +13,7 @@ import productQueries from './queries/product';
 import orderQueries from './queries/order';
 import imageQueries from './queries/image';
 import contentQueries from './queries/content';
+import translationQueries from './queries/translation';
 import { BACKEND_URL, BACKEND_GRAPHQL } from '../env';
 
 const resourseMap = {
@@ -20,6 +21,7 @@ const resourseMap = {
     order: orderQueries,
     image: imageQueries,
     content: contentQueries,
+    translation: translationQueries,
 }
 
 const client = require('graphql-client')({
