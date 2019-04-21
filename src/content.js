@@ -35,15 +35,15 @@ export const ContentList = props => (
 export const ContentEdit = props => (
     <Edit {...props}>
         <SimpleForm>
-            <ListItem source="titleEn" />
-            <ListItem source="titleEst" />
-            <ListItem source="titleRus" />
-            <ListItem source="subTitleEn" />
-            <ListItem source="subTitleEst" />
-            <ListItem source="subTitleRus" />
-            <ListItem source="paragraphEn" />
-            <ListItem source="paragraphEst" />
-            <ListItem source="paragraphRus" />
+            <TextInput source="titleEn" />
+            <TextInput source="titleEst" />
+            <TextInput source="titleRus" />
+            <TextInput source="subTitleEn" />
+            <TextInput source="subTitleEst" />
+            <TextInput source="subTitleRus" />
+            <LongTextInput source="paragraphEn" />
+            <LongTextInput source="paragraphEst" />
+            <LongTextInput source="paragraphRus" />
             <ImageAltUrlSelect source="imgAll"/>
         </SimpleForm>
     </Edit>
