@@ -63,7 +63,7 @@ const InnerComponent = ({
             <div style={{ display: 'flex', flexWrap: 'wrap', width: 'calc(100% - 20px)'}}>
                 {list.map((listItem, index) => (
                     <Chip
-                        label={listItem.length > 25 ? listItem.slice(0, 25) + ' ...' : listItem}
+                        label={listItem && listItem.length > 25 ? listItem.slice(0, 25) + ' ...' : listItem}
                         onDelete={() => { deleteListItem(index) }}
                         onClick={() => { setSelectedListItem(index) }}
                     />
