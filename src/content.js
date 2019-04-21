@@ -35,35 +35,16 @@ export const ContentList = props => (
 export const ContentEdit = props => (
     <Edit {...props}>
         <SimpleForm>
-            <TextInput source="titleEn" />
-            <TextInput source="titleEst" />
-            <TextInput source="titleRus" />
-            <TextInput source="subTitleEn" />
-            <TextInput source="subTitleEst" />
-            <TextInput source="subTitleRus" />
-            <LongTextInput source="paragraphEn" />
-            <LongTextInput source="paragraphEst" />
-            <LongTextInput source="paragraphRus" />
+            <ListItem source="titleEn" />
+            <ListItem source="titleEst" />
+            <ListItem source="titleRus" />
+            <ListItem source="subTitleEn" />
+            <ListItem source="subTitleEst" />
+            <ListItem source="subTitleRus" />
+            <ListItem source="paragraphEn" />
+            <ListItem source="paragraphEst" />
+            <ListItem source="paragraphRus" />
             <ImageAltUrlSelect source="imgAll"/>
         </SimpleForm>
     </Edit>
-);
-
-export const ProductCreate = props => (
-    <Create {...props}>
-        <SimpleForm>
-            <TextInput source="titleEn" />
-            <TextInput source="titleEst" />
-            <TextInput source="titleRus" />
-            <LongTextInput source="descriptionShortEn" />
-            <LongTextInput source="descriptionShortEst" />
-            <LongTextInput source="descriptionShortRus" />
-            <LongTextInput source="descriptionLongEn" />
-            <LongTextInput source="descriptionLongEst" />
-            <LongTextInput source="descriptionLongRus" />
-            <NumberInput source="amount" />
-            <BooleanInput source="available"/>
-            <NumberInput source="price" />
-        </SimpleForm>
-    </Create>
 );

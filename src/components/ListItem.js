@@ -73,10 +73,12 @@ const InnerComponent = ({
                         onClick={() => { setSelectedListItem(list.length) }}
                     />
             </div>
-            <FormControl>
-                <InputLabel htmlFor={source}>{source}</InputLabel>
-                <Input name={source} value={listItem} onChange={(event) => { setListItem(event.target.value )}}/>
-            </FormControl>
+            <div style={{ maxWidth: '90vw', width: '90vw', position: 'relative' }}>
+                <FormControl fullWidth={true}>
+                    <InputLabel htmlFor={source}>{source}</InputLabel>
+                    <Input name={source} value={listItem} onChange={(event) => { setListItem(event.target.value )}} multiline={true} rowsMax={Infinity} style={{ maxWidth: '100%' }}/>
+                </FormControl>
+            </div>
         </div>
         <Field name={source} component={({ input }) => (
             <Button style={{ width: '150px', marginTop: '5px' }} variant="contained" color="primary" onClick={() => { saveListItem(input.onChange); }}>
