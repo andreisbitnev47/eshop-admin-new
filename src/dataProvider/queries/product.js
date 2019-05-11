@@ -15,6 +15,7 @@ export default {
                     available
                     imgBig
                     price
+                    featured
                 }
             }
         
@@ -37,6 +38,7 @@ export default {
                     available
                     imgBig
                     price
+                    featured
                 }
             }
         
@@ -45,8 +47,8 @@ export default {
     }),
     UPDATE: (params) => ({
         query: `
-            mutation editProduct($id: ID!, $title: productTitleEditInput, $descriptionLong: productDescriptionLongEditInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float, $handle: String){
-                editProduct(id: $id, title: $title, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price, handle: $handle) {
+            mutation editProduct($id: ID!, $title: productTitleEditInput, $descriptionLong: productDescriptionLongEditInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float, $handle: String, $featured: Boolean!){
+                editProduct(id: $id, title: $title, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price, handle: $handle, featured: $featured) {
                     product {
                         id
                         titleEn: title(language: "en")
@@ -60,6 +62,7 @@ export default {
                         available
                         imgBig
                         price
+                        featured
                     }
                 }
             }
@@ -73,12 +76,13 @@ export default {
             imgBig: params.data.imgBig,
             price: params.data.price,
             handle: params.data.handle,
+            featured: params.data.featured,
         }
     }),
     CREATE: (params) => ({
         query: `
-            mutation addProduct($title: productTitleAddInput, $descriptionLong: productDescriptionLongAddInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float!){
-                addProduct(title: $title, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price) {
+            mutation addProduct($title: productTitleAddInput, $descriptionLong: productDescriptionLongAddInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float!, $featured: Boolean!){
+                addProduct(title: $title, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price, featured: $featured) {
                     product {
                         id
                         titleEn: title(language: "en")
@@ -92,6 +96,7 @@ export default {
                         available
                         imgBig
                         price
+                        featured
                     }
                 }
             }
@@ -103,6 +108,7 @@ export default {
             available: params.data.available,
             imgBig: params.data.imgBig,
             price: params.data.price,
+            featured: params.data.featured,
         }
     }),
     DELETE: (params) => ({
@@ -122,6 +128,7 @@ export default {
                         available
                         imgBig
                         price
+                        featured
                     }
                 }
             }

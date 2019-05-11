@@ -29,6 +29,7 @@ export const ProductList = props => (
             <TextField source="handle" />
             <NumberField source="amount" />
             <BooleanField source="available" />
+            <BooleanField source="featured" />
             <NumberField source="price" />
         </Datagrid>
     </List>
@@ -47,6 +48,7 @@ export const ProductEdit = props => (
             <LongTextInput source="descriptionLongRus" />
             <NumberInput source="amount" />
             <BooleanInput source="available"/>
+            <BooleanInput source="featured"/>
             <ImageSelect source="imgBig"/>
             <NumberInput source="price" />
         </SimpleForm>
@@ -64,6 +66,7 @@ export const ProductCreate = props => (
             <LongTextInput source="descriptionLongRus" />
             <NumberInput source="amount" />
             <BooleanInput source="available"/>
+            <BooleanInput source="featured"/>
             <ImageSelect source="imgBig"/>
             <NumberInput source="price" />
         </SimpleForm>
