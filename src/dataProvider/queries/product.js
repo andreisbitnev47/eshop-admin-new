@@ -47,7 +47,7 @@ export default {
     }),
     UPDATE: (params) => ({
         query: `
-            mutation editProduct($id: ID!, $title: productTitleEditInput, $descriptionLong: productDescriptionLongEditInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float, $handle: String, $featured: Boolean!){
+            mutation editProduct($id: ID!, $title: productTitleEditInput, $descriptionLong: productDescriptionLongEditInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float, $handle: String, $featured: Boolean){
                 editProduct(id: $id, title: $title, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price, handle: $handle, featured: $featured) {
                     product {
                         id
@@ -81,7 +81,7 @@ export default {
     }),
     CREATE: (params) => ({
         query: `
-            mutation addProduct($title: productTitleAddInput, $descriptionLong: productDescriptionLongAddInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float!, $featured: Boolean!){
+            mutation addProduct($title: productTitleAddInput, $descriptionLong: productDescriptionLongAddInput, $weight: Int, $amount: Int, $available: Boolean, $imgBig: [String], $price: Float!, $featured: Boolean){
                 addProduct(title: $title, descriptionLong: $descriptionLong, weight: $weight, amount: $amount, available: $available, imgBig: $imgBig, price: $price, featured: $featured) {
                     product {
                         id
